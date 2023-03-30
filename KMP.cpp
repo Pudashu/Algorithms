@@ -28,7 +28,7 @@ vector<int> make_next(string sub){
   next[0] = -1;
   int j = 0;
   int k = -1;
-  for (;j<sub.length();j++){
+  while(j<sub.length()-1){
 	if(k==-1 || sub[j] == sub[k]){
 	  //if k == -1 -> 1. Initiative situation 2. next[0] == -1 -> sub[j] can't find any same affix
 	  if(sub[++j] == sub[++k]){
