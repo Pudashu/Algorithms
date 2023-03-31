@@ -1,14 +1,13 @@
 struct HeapNode;
-typedef struct HeapNode * MinHeap;
-
+typedef struct Heapstruct * MinHeap;
 typedef struct TreeNode * HuffmanTree;
 struct TreeNode{
   int weight;
   HuffmanTree Left,Right;
 };
 
-struct HeapNode{
-  HuffmanTree Elements;
+struct Heapstruct{
+  HuffmanTree *Elements;
   int Size;
   int Capacity;
 };
@@ -16,4 +15,4 @@ struct HeapNode{
 MinHeap Initialize(int MaxElements);
 HuffmanTree DeleteMin(MinHeap H);
 void Insert(MinHeap H , HuffmanTree X);
-MinHeap BuildMinHeap(MinHeap H);//调序
+MinHeap BuildMinHeap(MinHeap H);//调序,通过权重建堆 H->Elements[i]->weight
